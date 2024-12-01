@@ -157,6 +157,29 @@ int fine(int matrice[6][7])
 		}
 	}
 	
+	for(int i=0; i<4; i++)
+	{
+		for(int j=0; j<3; j++)
+		{
+			if(matrice[i][j]!=0 &&
+			   matrice[i+0][j+0]==matrice[i+1][j+1] &&
+			   matrice[i+1][j+1]==matrice[i+2][j+2] &&
+			   matrice[i+2][j+2]==matrice[i+3][j+3])
+				return matrice[i][j];
+		}
+	}
+	
+	for(int i=0; i<4; i++)
+	{
+		for(int j=3; j<6; j++)
+		{
+			if(matrice[i][j]!=0 &&
+			   matrice[i+0][j-0]==matrice[i+1][j-1] &&
+			   matrice[i+1][j-1]==matrice[i+2][j-2] &&
+			   matrice[i+2][j-2]==matrice[i+3][j-3])
+				return matrice[i][j];
+		}
+	}	
 	return 0;
 }
 
